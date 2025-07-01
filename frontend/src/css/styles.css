@@ -1,0 +1,132 @@
+.wrap {
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: end !important;
+  padding-top: 10px;
+}
+
+.button-animation {
+  min-width: 250px !important;
+  min-height: 55px !important;
+  display: inline-flex !important;
+  font-family: 'Nunito', sans-serif !important;
+  font-size: 22px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-transform: uppercase !important;
+  text-align: center !important;
+  letter-spacing: 1.3px !important;
+  font-weight: 700 !important;
+  color: #313133 !important;
+  background: #4FD1C5 !important;
+  background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%) !important;
+  border: none !important;
+  border-radius: 1000px !important;
+  box-shadow: 12px 12px 24px rgba(79,209,197,.64) !important;
+  transition: all 0.3s ease-in-out !important;
+  cursor: pointer !important;
+  outline: none !important;
+  position: relative !important;
+  padding: 10px !important;
+}
+
+.button-animation::before {
+  content: '' !important;
+  border-radius: 1000px !important;
+  min-width: calc(250px + 12px) !important;
+  min-height: calc(55px + 12px) !important;
+  border: 6px solid #00FFCB !important;
+  box-shadow: 0 0 60px rgba(0,255,203,.64) !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  opacity: 0 !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+.button-animation:hover, 
+.button-animation:focus {
+  color: #313133 !important;
+  transform: translateY(-6px) !important;
+}
+
+.button-animation:hover::before, 
+.button-animation:focus::before {
+  opacity: 1 !important;
+}
+
+
+.loader {
+  --ballcolor: #f2f2f2;
+  --shadow: 0px 0 #ffffff00;
+  --shadowcolor: #ffffff00;
+  width: 10px;
+  height: 10px;
+  left: -120px;
+  border-radius: 50%;
+  position: relative;
+  color: var(--ballcolor);
+  animation: shadowRolling 2s linear infinite;
+}
+
+@keyframes shadowRolling {
+  0% {
+    box-shadow: var(--shadow),
+                var(--shadow),
+                var(--shadow),
+                var(--shadow);
+  }
+  12% {
+    box-shadow: 100px 0 var(--ballcolor),
+                var(--shadow),
+                var(--shadow),
+                var(--shadow);
+  }
+  25% {
+    box-shadow: 110px 0 var(--ballcolor),
+                100px 0 var(--ballcolor),
+                var(--shadow),
+                var(--shadow);
+  }
+  36% {
+    box-shadow: 120px 0 var(--ballcolor),
+                110px 0 var(--ballcolor),
+                100px 0 var(--ballcolor),
+                var(--shadow);
+  }
+  50% {
+    box-shadow: 130px 0 var(--ballcolor),
+                120px 0 var(--ballcolor),
+                110px 0 var(--ballcolor),
+                100px 0 var(--ballcolor);
+  }
+  62% {
+    box-shadow: 200px 0 var(--shadowcolor),
+                130px 0 var(--ballcolor),
+                120px 0 var(--ballcolor),
+                110px 0 var(--ballcolor);
+  }
+  75% {
+    box-shadow: 200px 0 var(--shadowcolor),
+                200px 0 var(--shadowcolor),
+                130px 0 var(--ballcolor),
+                120px 0 var(--ballcolor);
+  }
+  87% {
+    box-shadow: 200px 0 var(--shadowcolor),
+                200px 0 var(--shadowcolor),
+                200px 0 var(--shadowcolor),
+                130px 0 var(--ballcolor);
+  }
+  100% {
+    box-shadow: 200px 0 var(--shadowcolor),
+                200px 0 var(--shadowcolor),
+                200px 0 var(--shadowcolor),
+                200px 0 var(--shadowcolor);
+  }
+}
+*:focus {
+  outline: none;
+}
